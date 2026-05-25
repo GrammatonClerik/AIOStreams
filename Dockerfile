@@ -1,4 +1,4 @@
-FROM node:24-slim AS base
+FROM viren070/aiostreams:latest
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
@@ -76,7 +76,7 @@ COPY --from=builder /build/packages/server/node_modules ./packages/server/node_m
 
 FROM gcr.io/distroless/nodejs24-debian12 AS production
 
-LABEL org.opencontainers.image.title="AIOStreams"
+LABEL org.opencontainers.image.title="SoSayWeAll"
 LABEL org.opencontainers.image.source="https://github.com/GrammatonClerik/SoSayWeAll"
 LABEL org.opencontainers.image.description="AIOStreams consolidates multiple Stremio addons and debrid services - including its own suite of built-in addons - into a single, highly customisable super-addon."
 LABEL org.opencontainers.image.licenses="GPL-3.0"
